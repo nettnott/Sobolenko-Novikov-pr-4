@@ -1,0 +1,30 @@
+﻿<Page x:Class="Практическая_работа_4_Новиков_Соболенко.Page1"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Линейный алгоритм">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock Text="Задание 1. Вычисление функции a" FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="0,0,0,10" Height="50">
+                <Image Source="Image\1.png"/>
+            </Border>
+
+            <TextBlock Text="Введите X:"/>
+            <TextBox Name="TxtX" Margin="0,0,0,5" ToolTip="Введите вещественное число X"/>
+
+            <TextBlock Text="Введите Y:"/>
+            <TextBox Name="TxtY" Margin="0,0,0,5" ToolTip="Введите вещественное число Y"/>
+
+            <TextBlock Text="Введите Z:"/>
+            <TextBox Name="TxtZ" Margin="0,0,0,10" ToolTip="Введите вещественное число Z"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="Вычислить" Click="BtnCalc_Click" Width="100" Margin="0,0,10,0"/>
+                <Button Content="Очистить" Click="BtnClear_Click" Width="100"/>
+            </StackPanel>
+
+            <TextBlock Text="Результат:" FontWeight="Bold"/>
+            <TextBox Name="TxtResult" IsReadOnly="True" Background="#F0F0F0"/>
+        </StackPanel>
+    </Grid>
+</Page>
