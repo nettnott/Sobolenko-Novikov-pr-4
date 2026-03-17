@@ -26,29 +26,21 @@ namespace Практическая_работа_4_Новиков_Соболен�
         {
             if (double.TryParse(TxtX.Text, out double x) && int.TryParse(TxtI.Text, out int i))
             {
-
                 double fx = 0;
                 if (RbSh.IsChecked == true) fx = Math.Sinh(x);
                 else if (RbSqr.IsChecked == true) fx = Math.Pow(x, 2);
                 else if (RbExp.IsChecked == true) fx = Math.Exp(x);
 
-                double result;
-                bool isOdd = (i % 2 != 0);
+                try
+                {
+                    double result = Funcs.Func2(x, i, fx);
 
-                if (isOdd && x > 0)
-                {
-                    result = i * Math.Sqrt(fx);
+                    TxtResult.Text = Math.Round(result, 4).ToString();
                 }
-                else if (!isOdd && x < 0)
+                catch (Exception ex)
                 {
-                    result = (i / 2.0) * Math.Sqrt(Math.Abs(fx));
+                    MessageBox.Show($"Ошибка: {ex.Message}");
                 }
-                else
-                {
-                    result = Math.Sqrt(Math.Abs(i * fx));
-                }
-
-                TxtResult.Text = Math.Round(result, 4).ToString();
             }
             else
             {

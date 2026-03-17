@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,49 +26,20 @@ namespace Практическая_работа_4_Новиков_Соболен�
                 double.TryParse(TxtB.Text, out double b))
             {
                 TxtOutput.Clear();
-                GraphCanvas.Children.Clear();
+                List<Point> points = Funcs.Func3(x0, xk, dx, b);
 
                 StringBuilder sb = new StringBuilder();
-                Polyline polyline = new Polyline
-                {
-                    Stroke = Brushes.Blue,
-                    StrokeThickness = 2
-                };
-
-                var points = new System.Collections.Generic.List<Point>();
-                double minX = x0, maxX = xk;
                 double minY = double.MaxValue, maxY = double.MinValue;
-
-                for (double x = x0; x <= xk + 0.0001; x += dx)
-                {
-                    double y = Math.Pow(x, 4) + Math.Cos(2 + Math.Pow(x, 3) - b);
-
-                    sb.AppendLine($"x={x:F2}  y={y:F2}");
-
-                    if (y < minY) minY = y;
-                    if (y > maxY) maxY = y;
-                    points.Add(new Point(x, y));
-                }
-
-                TxtOutput.Text = sb.ToString();
-
-                double canvasWidth = GraphCanvas.ActualWidth;
-                double canvasHeight = GraphCanvas.ActualHeight;
-
-                if (canvasWidth == 0) canvasWidth = 400;
-                if (canvasHeight == 0) canvasHeight = 300;
 
                 foreach (var p in points)
                 {
-
-
-                    double screenX = (p.X - minX) / (maxX - minX) * canvasWidth;
-                    double screenY = canvasHeight - ((p.Y - minY) / (maxY - minY) * canvasHeight);
-
-                    polyline.Points.Add(new Point(screenX, screenY));
+                    sb.AppendLine($"x={p.X:F2}  y={p.Y:F2}");
+                    if (p.Y < minY) minY = p.Y;
+                    if (p.Y > maxY) maxY = p.Y;
                 }
+                TxtOutput.Text = sb.ToString();
 
-                GraphCanvas.Children.Add(polyline);
+                Funcs.DrawGraph(GraphCanvas, points, x0, xk, minY, maxY);
             }
             else
             {

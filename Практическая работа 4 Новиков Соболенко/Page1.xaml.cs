@@ -17,20 +17,14 @@ namespace Практическая_работа_4_Новиков_Соболен�
                 double.TryParse(TxtY.Text, out double y) &&
                 double.TryParse(TxtZ.Text, out double z))
             {
-
                 try
                 {
-                    double part1 = Math.Log(Math.Pow(y, -Math.Sqrt(Math.Abs(x))));
-                    double part2 = x - (y / 2.0);
-                    double part3 = Math.Pow(Math.Sin(Math.Atan(z)), 2);
-
-                    double a = part1 * part2 + part3;
-
-                    TxtResult.Text = Math.Round(a, 4).ToString();
+                    double result = Funcs.Func1(x, y, z);
+                    TxtResult.Text = Math.Round(result, 4).ToString();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибка вычисления: " + ex.Message);
+                    MessageBox.Show($"Ошибка вычисления: {ex.Message}");
                 }
             }
             else
