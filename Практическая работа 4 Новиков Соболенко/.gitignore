@@ -1,0 +1,22 @@
+# Visual Studio папка с настройками (не коммитить)
+.vs/
+
+# Папки сборки
+bin/
+obj/
+
+# Файлы пользовательских настроек
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Временные файлы
+*.tmp
+*.temp
+*.log
+*.cache
+
+# NuGet
+packages/
+*.nupkg
