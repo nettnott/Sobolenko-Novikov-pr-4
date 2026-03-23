@@ -35,3 +35,8 @@
 
 ### Интерфейс третьей страницы (третье задание):
 <img width="984" height="516" alt="{C2DD53A9-FDC0-4C66-9109-05B2FDF8B2A1}" src="https://github.com/user-attachments/assets/bf8ab91f-b4da-495f-885c-e38e222f77d3" />
+
+## Тесты
+
+### Результат работы автотестов
+<img width="989" height="492" alt="image" src="https://github.com/user-attachments/assets/00759fb5-d04c-4cbd-8a6a-ffd3ba7679be" />
