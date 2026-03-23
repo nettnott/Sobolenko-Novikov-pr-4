@@ -40,3 +40,25 @@
 
 ### Результат работы автотестов
 <img width="989" height="492" alt="image" src="https://github.com/user-attachments/assets/00759fb5-d04c-4cbd-8a6a-ffd3ba7679be" />
+
+### Выводы о методах объекта Assert и примеры:
+            // Assert.AreEqual — проверяет равенство
+            Assert.AreEqual(4, 2 + 2);
+
+            // Assert.AreNotEqual — проверяет неравенство
+            Assert.AreNotEqual(5, 2 + 2);
+
+            // Assert.IsTrue — проверяет истинность условия
+            Assert.IsTrue(10 > 5);
+
+            // Assert.IsFalse — проверяет ложность условия
+            Assert.IsFalse(3 > 10);
+
+            // Assert.IsNull — проверяет, что объект равен null
+            object obj = null;
+            Assert.IsNull(obj);
+
+            // Assert.IsNotNull — проверяет, что объект не равен null
+            object obj2 = new object();
+            Assert.IsNotNull(obj2);
+
